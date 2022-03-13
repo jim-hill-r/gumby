@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 
 const MOVEMENT_OPTIONS:String[] = [
   "Climb",
@@ -15,7 +16,7 @@ const randomMovement = () => {
 }
 
 export default function IndexPage () {
-  const [movement,setMovement] = useState<String>(randomMovement())
+  const [ movement, setMovement ] = useState<String>(randomMovement())
 
   const updateMovement = () => {
     setMovement(randomMovement())
@@ -29,6 +30,7 @@ export default function IndexPage () {
       <div>
         {movement}
       </div>
+      <Link to="/plan">Make a plan</Link>
     </>
   )
 }
